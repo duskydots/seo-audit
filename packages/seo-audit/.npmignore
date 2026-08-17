@@ -1,0 +1,31 @@
+# Defense in depth. The package.json `files` allowlist remains authoritative.
+.agents/
+.codex/
+.github/
+coverage/
+dist/
+docs/
+tests/
+audit-*/
+
+# Development configuration and generated metadata.
+tsconfig*.json
+biome.json
+*.tsbuildinfo
+*.map
+*.log
+*.tgz
+
+# Tests and fixtures accidentally added below an allowed source directory.
+**/__fixtures__/
+**/__tests__/
+**/*.e2e.*
+**/*.spec.*
+**/*.test.*
+
+# Local credentials and machine-specific files.
+.env
+.env.*
+!.env.example
+*.local
+.DS_Store

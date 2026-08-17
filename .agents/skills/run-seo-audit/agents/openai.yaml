@@ -1,0 +1,4 @@
+interface:
+  display_name: "Run SEO Audit"
+  short_description: "Run and inspect technical SEO crawls"
+  default_prompt: "Use $run-seo-audit to crawl a site and explain its most important technical findings."

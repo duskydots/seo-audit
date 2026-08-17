@@ -1,0 +1,4 @@
+interface:
+  display_name: "Extend SEO Audit"
+  short_description: "Extend crawler domains, schemas, and rules"
+  default_prompt: "Use $extend-seo-audit to add a validated crawler feature with focused tests."

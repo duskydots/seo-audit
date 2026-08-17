@@ -1,0 +1,45 @@
+{
+  "name": "@duskydots/seo-audit-cli",
+  "version": "1.0.7",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duskydots/seo-audit.git",
+    "directory": "packages/cli"
+  },
+  "dependencies": {
+    "@duskydots/seo-audit": "workspace:1.0.7",
+    "playwright": "1.62.1",
+    "zod": "^4.4.3"
+  },
+  "description": "Command-line interface for the Dusky Dots technical SEO audit engine.",
+  "homepage": "https://github.com/duskydots/seo-audit#readme",
+  "bugs": "https://github.com/duskydots/seo-audit/issues",
+  "keywords": [
+    "seo",
+    "crawler",
+    "audit",
+    "cli",
+    "bun"
+  ],
+  "type": "module",
+  "bin": {
+    "seo-audit": "./src/cli.ts"
+  },
+  "files": [
+    "src",
+    "ui-dist"
+  ],
+  "engines": {
+    "bun": ">=1.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bun build src/cli.ts --compile --external playwright --external playwright-core --outfile ../../dist/seo-audit",
+    "check": "tsc --noEmit -p tsconfig.json",
+    "prepack": "bun run --cwd ../../apps/report-ui build",
+    "pack:dry-run": "bun pm pack --dry-run"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "duskydots-seo-audit-workspace",
+  "version": "1.0.7",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.3.13",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "audit": "bun run --cwd packages/cli src/cli.ts",
+    "build": "bun run build:ui && bun run build:cli",
+    "build:cli": "bun run --cwd packages/cli build",
+    "build:ui": "bun run --cwd apps/report-ui build",
+    "check": "bun run check:biome && bun run check:types",
+    "check:biome": "biome ci .",
+    "check:types": "tsc --noEmit -p tsconfig.scripts.json && bun run --filter '*' check",
+    "format": "biome check --write .",
+    "test": "bun test",
+    "test:unit": "bun test tests/unit",
+    "test:smoke": "bun test tests/smoke",
+    "pack:dry-run": "bun run build:ui && bun run --cwd packages/seo-audit pack:dry-run && bun run --cwd packages/cli pack:dry-run",
+    "docs:generate": "bun run scripts/generate-cli-docs.ts",
+    "release:set-version": "bun run scripts/set-release-version.ts",
+    "release:publish": "bun run scripts/publish-release.ts",
+    "release:verify": "bun run scripts/verify-release.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.5",
+    "@types/bun": "^1.3.14",
+    "playwright": "1.62.1",
+    "typescript": "^7.0.2",
+    "zod": "^4.4.3"
+  }
+}
