@@ -1,4 +1,4 @@
-# SiteLens SEO Audit
+# SEO Audit
 
 A deterministic Bun and TypeScript technical SEO crawler with a human-readable Markdown report, schema-validated JSON/JSONL artifacts, default Playwright rendering for eligible HTML pages, and a static React/TanStack Router reporting UI.
 
